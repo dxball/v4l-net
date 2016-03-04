@@ -80,6 +80,15 @@ namespace Video4Linux.Analog {
 
         #endregion Constructors and Destructors
 
+        public static void ResetUSB(String path) {
+            const int USBDEVFS_RESET = 21780;
+            int ret = 0;
+            int fd = Syscall.open(path, OpenFlags.O_WRONLY);
+            if(fd < 0) { return; }
+            IOControl.ioctl(fd, USBDEVFS_RESET, ref ret);
+            Syscall.close(fd);
+        }
+
         #region Private Methods
 
         /// <summary>
@@ -282,6 +291,7 @@ namespace Video4Linux.Analog {
             query.id = (uint)ctrl;
             int ret = ioControl.QueryControl(ref query);
             if(ret < 0) { throw new Exception("VIDIOC_QUERYCTRL: " + ret.ToString()); }
+
             DeviceControl control = new DeviceControl() {
                 Id = ctrl,
                 Name = query.name,
@@ -351,7 +361,6 @@ namespace Video4Linux.Analog {
         public void SetFormat(Analog.Video.BaseFormat fmt) {
             fmt.Set(this);
         }
-
         #endregion Public Methods
 
         #region Internal Properties

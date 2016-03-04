@@ -426,7 +426,9 @@ namespace Video4Linux.Core
 		[DllImport("libc", SetLastError=true)]
 		private static extern int
 			ioctl(int device, v4l2_operation request, ref int argp);
-		
+
+		[DllImport("libc", SetLastError = true)]
+		public static extern int ioctl(int device, int request, ref int arg);
 		#endregion Extern LibC Methods
 	}
 }
