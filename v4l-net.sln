@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "v4l-net", "v4l-net.csproj", "{270C49A5-7A89-46EC-B3FF-178BE7AF7C56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "v4l-net", "v4l-net\v4l-net.csproj", "{270C49A5-7A89-46EC-B3FF-178BE7AF7C56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10986377-E14E-446B-8283-FD8A1D8E1ADD}
 	EndGlobalSection
 EndGlobal
